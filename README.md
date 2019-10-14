@@ -1,0 +1,2 @@
+# UnityVRTutorialMaker
+A VR Tutorial Creator tool for Unity that lets you super easily create tutorials for how to play your game and helps users figure out the different controller elements and how to use them.  It helps with stuff like highlighting the right button / joystick on different platforms, handling vibration, has prefabs for showing tutorial tips that point to those buttons, ect... and works on all platforms automatically like Vive, Rift, Index, Quest, Go, ect..
