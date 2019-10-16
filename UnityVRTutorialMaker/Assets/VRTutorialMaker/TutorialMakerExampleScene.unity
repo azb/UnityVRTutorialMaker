@@ -4900,7 +4900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9327e0c46515ce1498c8ba4b14c0e7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 2
+  controller: 1
   button: 32768
   buttonMovementAxis: 1
   moveScale: {x: 0, y: -0.0005, z: 0}
