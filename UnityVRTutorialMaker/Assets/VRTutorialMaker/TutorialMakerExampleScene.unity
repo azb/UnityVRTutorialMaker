@@ -4339,6 +4339,50 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1114601047
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114601049}
+  - component: {fileID: 1114601048}
+  m_Layer: 0
+  m_Name: Unplay Key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1114601048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114601047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951db166d2a1fc74191cde488eadbd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 32
+--- !u!4 &1114601049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114601047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9890373, y: -1.1516603, z: 0.11623651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147969733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,7 +4394,6 @@ GameObject:
   - component: {fileID: 1147969734}
   - component: {fileID: 1147969737}
   - component: {fileID: 1147969736}
-  - component: {fileID: 1147969735}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4372,19 +4415,6 @@ Transform:
   m_Father: {fileID: 1798943296}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1147969735
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147969733}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1147969736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6205,6 +6235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798943296}
   - component: {fileID: 1798943297}
+  - component: {fileID: 1798943298}
   m_Layer: 0
   m_Name: Tutorial Text Box
   m_TagString: Untagged
@@ -6219,7 +6250,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798943295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.08515608, z: 0, w: 0.99636763}
   m_LocalPosition: {x: -0.91448337, y: -1.12042, z: -0.3379706}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
@@ -6228,7 +6259,7 @@ Transform:
   - {fileID: 1056198450}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -9.77, z: 0}
 --- !u!114 &1798943297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6241,8 +6272,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50c3acddd170144fa5eba81cf38a8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1304612719}
-  offset: {x: 0, y: 0.2, z: 0.4}
+  target: {fileID: 2080150402}
+  offset: {x: 0, y: 0.2, z: 0}
+  speed: 2
+  distance: 0.4
+--- !u!114 &1798943298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798943295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70df2b718ee3e240a5247a5c05bf023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2080231148}
+  offset: {x: 0, y: -90, z: 0}
 --- !u!1 &1840087110
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,7 +7834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   object1: {fileID: 1304612719}
   object2: {fileID: 2086501340}
-  offset1: {x: 0, y: 0, z: 0}
+  offset1: {x: 0, y: 0.01, z: 0}
   offset2: {x: 0, y: 0, z: 0}
 --- !u!120 &2086501339
 LineRenderer:
@@ -7837,13 +7884,22 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.15277863
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
