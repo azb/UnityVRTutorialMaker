@@ -6236,6 +6236,7 @@ GameObject:
   - component: {fileID: 1798943296}
   - component: {fileID: 1798943297}
   - component: {fileID: 1798943298}
+  - component: {fileID: 1798943299}
   m_Layer: 0
   m_Name: Tutorial Text Box
   m_TagString: Untagged
@@ -6290,6 +6291,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2080231148}
   offset: {x: 0, y: -90, z: 0}
+--- !u!114 &1798943299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798943295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d642ba9f1ffb014c847a56093ebad53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightControllerButton0: {fileID: 0}
+  RightControllerButton1: {fileID: 0}
+  RightControllerJoystick: {fileID: 0}
+  RightControllerTrigger: {fileID: 0}
+  RightControllerGrip: {fileID: 0}
+  LeftControllerButton0: {fileID: 0}
+  LeftControllerButton1: {fileID: 0}
+  LeftControllerJoystick: {fileID: 0}
+  LeftControllerTrigger: {fileID: 0}
+  LeftControllerGrip: {fileID: 0}
 --- !u!1 &1840087110
 GameObject:
   m_ObjectHideFlags: 0
