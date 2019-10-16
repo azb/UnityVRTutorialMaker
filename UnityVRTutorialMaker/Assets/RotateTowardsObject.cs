@@ -6,6 +6,8 @@ public class RotateTowardsObject : MonoBehaviour
 {
     public Transform target;
 
+    public Vector3 offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,10 @@ public class RotateTowardsObject : MonoBehaviour
 
         Debug.Log("ydir = "+ydir);
 
-        transform.rotation = Quaternion.Euler(0,-ydir,0);
+        transform.rotation = Quaternion.Euler(
+            offset.x,
+            -ydir + offset.y,
+            offset.z
+            );
     }
 }
