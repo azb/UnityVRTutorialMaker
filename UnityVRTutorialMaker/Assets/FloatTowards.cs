@@ -8,6 +8,10 @@ public class FloatTowards : MonoBehaviour
 
     public Vector3 offset;
 
+    public float speed;
+
+    public float distance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +23,8 @@ public class FloatTowards : MonoBehaviour
     {
         transform.position = Vector3.Lerp( 
             transform.position,
-            target.position + offset,
-            Time.deltaTime
+            target.position + target.forward * distance + offset,
+            Time.deltaTime * speed
             );
     }
 }
