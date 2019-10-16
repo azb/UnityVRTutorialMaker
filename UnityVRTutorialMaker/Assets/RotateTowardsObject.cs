@@ -17,7 +17,19 @@ public class RotateTowardsObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float dist = Vector2.Distance( 
+            new Vector2(
+                transform.position.x,
+                transform.position.z),
+            new Vector2(
+                target.position.x,
+                target.position.z)
+            );
 
+        float xdir = Mathf.Atan2( 
+            target.position.y - transform.position.y,
+            dist
+            ) * Mathf.Rad2Deg;
 
         float ydir = Mathf.Atan2( 
             target.position.z - transform.position.z,
@@ -27,7 +39,7 @@ public class RotateTowardsObject : MonoBehaviour
         Debug.Log("ydir = "+ydir);
 
         transform.rotation = Quaternion.Euler(
-            offset.x,
+            xdir + offset.x,
             -ydir + offset.y,
             offset.z
             );
