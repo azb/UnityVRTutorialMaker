@@ -36,8 +36,6 @@ public class RotateTowardsObject : MonoBehaviour
             target.position.x - transform.position.x
             ) * Mathf.Rad2Deg;
 
-        Debug.Log("ydir = "+ydir);
-
         transform.rotation = Quaternion.Euler(
             xdir + offset.x,
             -ydir + offset.y,
