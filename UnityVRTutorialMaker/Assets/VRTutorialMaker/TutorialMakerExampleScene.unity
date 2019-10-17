@@ -244,6 +244,49 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &42365960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 42365961}
+  - component: {fileID: 42365962}
+  m_Layer: 0
+  m_Name: VRController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &42365961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42365960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1766209375}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &42365962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42365960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454fab065316d9243981bab0fd22cc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &66877009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,6 +1413,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243097429}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &247826248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247826249}
+  - component: {fileID: 247826250}
+  m_Layer: 0
+  m_Name: Tutorial Step 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247826249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247826248}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247826250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247826248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Press this button to interact
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 1
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &261327896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,7 +2325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1307870489563208, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1999073185825882, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
       propertyPath: m_IsActive
@@ -3367,6 +3462,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755868678}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &796923323
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796923324}
+  - component: {fileID: 796923325}
+  m_Layer: 0
+  m_Name: Tutorial Step 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &796923324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796923323}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796923325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796923323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use the Right Controller Joystick to rotate left and right
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 2
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &838608631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
@@ -3532,6 +3679,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &904864135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904864136}
+  - component: {fileID: 904864137}
+  m_Layer: 0
+  m_Name: Tutorial Step 9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904864136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904864135}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904864137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904864135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use the Controller Grip to pick up objects
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 3
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &907087223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4167,6 +4366,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6cdedea6a9107f74d81b4de00577507d, type: 3}
+      propertyPath: m_Name
+      value: Abutton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 6cdedea6a9107f74d81b4de00577507d, type: 3}
+      propertyPath: m_Name
+      value: BButton2
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 6cdedea6a9107f74d81b4de00577507d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4597,6 +4804,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right_Touch_Controller
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: AButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: BButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: RightGrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: RightJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: RightTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4782,11 +5009,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_Name
-      value: Xbutton
+      value: XButton
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_Name
       value: YButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: LeftGrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: LeftJoystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: LeftTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5227,6 +5466,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1448605583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448605584}
+  - component: {fileID: 1448605585}
+  m_Layer: 0
+  m_Name: Tutorial Step 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1448605584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448605583}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1448605585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448605583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use the Controller Grip to pick up objects
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 3
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1470509161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5773,6 +6064,30 @@ PrefabInstance:
       propertyPath: m_controller
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010178323718, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956530202777762, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864357959958104, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307870489563208, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1999073185825882, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1351868014986946, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 23022262598936998, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
         type: 3}
       propertyPath: m_Enabled
@@ -5785,6 +6100,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+--- !u!1 &1593728467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593728468}
+  - component: {fileID: 1593728469}
+  m_Layer: 0
+  m_Name: Tutorial Step 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1593728468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593728467}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1593728469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593728467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Right Controller Grip
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 4
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1605028846
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,6 +6592,89 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1766209374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766209375}
+  m_Layer: 0
+  m_Name: VRPlaySpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1766209375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766209374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6743422, y: -0.78257334, z: -0.56585723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 42365961}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1786093121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1786093122}
+  - component: {fileID: 1786093123}
+  m_Layer: 0
+  m_Name: Tutorial Step 10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1786093122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786093121}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1786093123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786093121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Left Controller Grip
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 4
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1798943295
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,6 +6708,7 @@ Transform:
   - {fileID: 2086501340}
   - {fileID: 1147969734}
   - {fileID: 1056198450}
+  - {fileID: 1914851515}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -9.77, z: 0}
@@ -6303,16 +6754,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d642ba9f1ffb014c847a56093ebad53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightControllerButton0: {fileID: 0}
-  RightControllerButton1: {fileID: 0}
-  RightControllerJoystick: {fileID: 0}
-  RightControllerTrigger: {fileID: 0}
-  RightControllerGrip: {fileID: 0}
-  LeftControllerButton0: {fileID: 0}
-  LeftControllerButton1: {fileID: 0}
-  LeftControllerJoystick: {fileID: 0}
-  LeftControllerTrigger: {fileID: 0}
-  LeftControllerGrip: {fileID: 0}
+  tutorialText: {fileID: 1056198451}
+  highlight: {fileID: 2100000, guid: 9c86455973386a0429a3862900360801, type: 2}
+  normal: {fileID: 2100000, guid: c7c4bdae545757244a68c3e30849919e, type: 2}
+  tutorialLine: {fileID: 2086501338}
+  tutorialSteps:
+  - {fileID: 1993626958}
+  - {fileID: 247826250}
+  - {fileID: 796923325}
+  - {fileID: 1448605585}
+  - {fileID: 1802738870}
+  - {fileID: 1877207414}
+  - {fileID: 2141991298}
+  - {fileID: 904864137}
+  vrController: {fileID: 0}
+--- !u!1 &1802738868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802738869}
+  - component: {fileID: 1802738870}
+  m_Layer: 0
+  m_Name: Tutorial Step 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1802738869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802738868}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802738870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802738868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use Left Controller Button 0 to switch primary weapon
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 0
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1840087110
 GameObject:
   m_ObjectHideFlags: 0
@@ -6439,6 +6946,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1877207412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877207413}
+  - component: {fileID: 1877207414}
+  m_Layer: 0
+  m_Name: Tutorial Step 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1877207413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877207412}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877207414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877207412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use Left Controller Button 1 to switch secondary weapon
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 1
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1908482354
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,6 +7124,59 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1914851514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914851515}
+  - component: {fileID: 1914851516}
+  m_Layer: 0
+  m_Name: Tutorial Steps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1914851515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914851514}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1993626959}
+  - {fileID: 247826249}
+  - {fileID: 796923324}
+  - {fileID: 1448605584}
+  - {fileID: 1802738869}
+  - {fileID: 1877207413}
+  - {fileID: 2141991297}
+  - {fileID: 904864136}
+  - {fileID: 1593728468}
+  - {fileID: 1786093122}
+  m_Father: {fileID: 1798943296}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914851516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914851514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454fab065316d9243981bab0fd22cc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1925469567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6866,6 +7478,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &1993626957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993626959}
+  - component: {fileID: 1993626958}
+  m_Layer: 0
+  m_Name: Tutorial Step 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1993626958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993626957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Press this button to jump
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 0
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &1993626959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993626957}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2013597837
 GameObject:
   m_ObjectHideFlags: 0
@@ -8103,6 +8767,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &2141991296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141991297}
+  - component: {fileID: 2141991298}
+  m_Layer: 0
+  m_Name: Tutorial Step 8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141991297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141991296}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141991298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141991296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Use the Left Controller Joystick to move around
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 2
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1125067568871548
 GameObject:
   m_ObjectHideFlags: 0
