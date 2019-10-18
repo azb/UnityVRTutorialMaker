@@ -289,6 +289,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftController: {fileID: 0}
   rightController: {fileID: 0}
+--- !u!1 &55024404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55024405}
+  m_Layer: 0
+  m_Name: LeftJoystickCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &55024405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55024404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0017, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1304612710}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66877009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,7 +1634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 263511906}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00101, y: -0.00149, z: 0.00041}
+  m_LocalPosition: {x: 0.00101, y: -0.00184, z: 0.00018}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1304612707}
@@ -3699,6 +3729,28 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &729816680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304612695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &729816684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729816680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9327e0c46515ce1498c8ba4b14c0e7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: 1
+  button: 256
+  buttonMovementAxis: 1
+  moveScale: {x: 0, y: -0.0004, z: 0}
 --- !u!1 &755868678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3842,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755868678}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &757234703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757234704}
+  - component: {fileID: 757234705}
+  m_Layer: 0
+  m_Name: Tutorial Step 12
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &757234704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757234703}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &757234705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757234703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Press this button to exit the game
+  vrDeviceToHighlight: 0
+  vrInputToHighlight: 5
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &796923323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,6 +3949,12 @@ MonoBehaviour:
 --- !u!1 &838608631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259378967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &838608632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
     type: 3}
   m_PrefabInstance: {fileID: 1259378967}
   m_PrefabAsset: {fileID: 0}
@@ -4174,7 +4284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 928225413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00128, y: 0.00033, z: -0.0023}
+  m_LocalPosition: {x: -0.00128, y: -0.00023, z: -0.00069}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2024896531}
@@ -4779,6 +4889,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cdedea6a9107f74d81b4de00577507d, type: 3}
+--- !u!1 &1104828720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1104828721}
+  m_Layer: 0
+  m_Name: RightJoystickCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104828721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104828720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.0017, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 838608632}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107310626
 GameObject:
   m_ObjectHideFlags: 0
@@ -5179,6 +5319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightJoystick
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: HomeButton
+      objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_Name
       value: RightTrigger
@@ -5473,6 +5617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftJoystick
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
+      propertyPath: m_Name
+      value: MenuButton
+      objectReference: {fileID: 0}
     - target: {fileID: 100014, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf, type: 3}
       propertyPath: m_Name
       value: LeftTrigger
@@ -5661,6 +5809,12 @@ MonoBehaviour:
 --- !u!4 &1304612707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400014, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1304612695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1304612710 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
     type: 3}
   m_PrefabInstance: {fileID: 1304612695}
   m_PrefabAsset: {fileID: 0}
@@ -6266,6 +6420,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500551997}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1509395757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100008, guid: 3955c5f4fbf38bf4b9ce5fc0d1492fbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1259378967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1509395761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509395757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9327e0c46515ce1498c8ba4b14c0e7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: 2
+  button: 256
+  buttonMovementAxis: 1
+  moveScale: {x: 0, y: -0.0004, z: 0}
 --- !u!1 &1519282572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,7 +6782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorial: {fileID: 0}
-  text: Right Controller Trigger
+  text: Press the Right Controller Trigger
   vrDeviceToHighlight: 0
   vrInputToHighlight: 3
   executeOnCompletion:
@@ -7129,7 +7305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorial: {fileID: 0}
-  text: Left Controller Trigger
+  text: Press the Left Controller Trigger
   vrDeviceToHighlight: 1
   vrInputToHighlight: 3
   executeOnCompletion:
@@ -7233,6 +7409,7 @@ MonoBehaviour:
   - {fileID: 904864137}
   vrController: {fileID: 0}
   floatTowards: {fileID: 0}
+  highlightColor: {r: 1, g: 0, b: 0.9783716, a: 0}
 --- !u!1 &1802738868
 GameObject:
   m_ObjectHideFlags: 0
@@ -7309,7 +7486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821113190}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00121, y: 0.00032999963, z: -0.0023000003}
+  m_LocalPosition: {x: -0.00121, y: -0.00023, z: -0.00069}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1299033031}
@@ -7658,6 +7835,8 @@ Transform:
   - {fileID: 2141991297}
   - {fileID: 904864136}
   - {fileID: 1786093122}
+  - {fileID: 2062629190}
+  - {fileID: 757234704}
   m_Father: {fileID: 1798943296}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8058,7 +8237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000522138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00101, y: -0.00149, z: 0.00041}
+  m_LocalPosition: {x: 0.00101, y: -0.00184, z: 0.00018}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1961086148}
@@ -8498,6 +8677,58 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!1 &2062629189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062629190}
+  - component: {fileID: 2062629191}
+  m_Layer: 0
+  m_Name: Tutorial Step 11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2062629190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062629189}
+  m_LocalRotation: {x: -0, y: 0.08515608, z: -0, w: 0.99636763}
+  m_LocalPosition: {x: 1.7642328, y: 1.8756995, z: 1.943415}
+  m_LocalScale: {x: 3.333333, y: 3.3333328, z: 3.333333}
+  m_Children: []
+  m_Father: {fileID: 1914851515}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062629191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062629189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorial: {fileID: 0}
+  text: Press this button to open the pause menu
+  vrDeviceToHighlight: 1
+  vrInputToHighlight: 5
+  executeOnCompletion:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!143 &2065819392
 CharacterController:
   m_ObjectHideFlags: 0
