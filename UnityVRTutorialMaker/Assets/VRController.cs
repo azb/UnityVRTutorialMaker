@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-100)]
 public class VRController : MonoBehaviour
 {
     public enum Platform {
@@ -45,23 +46,37 @@ public class VRController : MonoBehaviour
     
     MeshRenderer rend;
 
+    Transform FindTransform(string name)
+    {
+        Transform foundTransform = GameObject.Find(name).transform;
+
+        if (foundTransform == null)
+        {
+            Debug.LogError("Couldn't find a Transform named "+name);
+        }
+
+        return foundTransform;
+    }
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        RightControllerButton0 = GameObject.Find("AButton").transform;
-        RightControllerButton1 = GameObject.Find("BButton").transform;
-        RightControllerJoystick = GameObject.Find("RightJoystick").transform;
-        RightControllerTrigger = GameObject.Find("RightTrigger").transform;
-        RightControllerGrip = GameObject.Find("RightGripCenter").transform;
+        RightControllerButton0 = FindTransform("AButton");
+        RightControllerButton1 = FindTransform("BButton");
+        RightControllerJoystick = FindTransform("RightJoystick");
+        RightControllerTrigger = FindTransform("RightTriggerCenter");
+        RightControllerGrip = FindTransform("RightGripCenter");
 
-        LeftControllerButton0 = GameObject.Find("XButton").transform;
-        LeftControllerButton1 = GameObject.Find("YButton").transform;
-        LeftControllerJoystick = GameObject.Find("LeftJoystick").transform;
-        LeftControllerTrigger = GameObject.Find("LeftTrigger").transform;
-        LeftControllerGrip = GameObject.Find("LeftGripCenter").transform;
+        LeftControllerButton0 = FindTransform("XButton");
+        LeftControllerButton1 = FindTransform("YButton");
+        LeftControllerJoystick = FindTransform("LeftJoystick");
+        LeftControllerTrigger = FindTransform("LeftTriggerCenter");
+        LeftControllerGrip = FindTransform("LeftGripCenter");
         
-        leftController = GameObject.Find("LeftControllerAnchor").transform;
-        rightController = GameObject.Find("RightControllerAnchor").transform;
+        leftController = FindTransform("LeftControllerAnchor");
+        rightController = FindTransform("RightControllerAnchor");
 
         rightVRInputToTransform = new Hashtable();
         rightVRInputToTransform.Add(VRInput.Button0, RightControllerButton0);
@@ -109,8 +124,7 @@ public class VRController : MonoBehaviour
         if (platform == Platform.OVR)
         {
             //Debug.Log("input = "+input);
-
-
+            
             OVRInput.Button button = (OVRInput.Button) VRInputToOVRButton[input];
             OVRInput.Controller controller = OVRInput.Controller.LTouch;
 
