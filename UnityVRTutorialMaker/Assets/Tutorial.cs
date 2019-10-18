@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[DefaultExecutionOrder(-10)]
 public class Tutorial : MonoBehaviour
 {
     public TextMeshPro tutorialText;
@@ -12,8 +13,13 @@ public class Tutorial : MonoBehaviour
     public DrawLineBetweenObjects tutorialLine;
 
     float alpha, time;
-    
+
+    //Tutorial steps parent transform should contain game objects with TutorialStep component 
+    //attached to children, where each game object represents another step in the tutorial
+    public Transform tutorialStepsParent;
+
     public TutorialStep[] tutorialSteps;
+
     int currentStep = 0;
 
     public VRController vrController;
@@ -23,6 +29,8 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        tutorialSteps = tutorialStepsParent.GetComponentsInChildren<TutorialStep>();
+
         floatTowards = FindObjectOfType<FloatTowards>();
         vrController = FindObjectOfType<VRController>();
 
@@ -79,8 +87,6 @@ public class Tutorial : MonoBehaviour
             tutorialText.text = tutorialSteps[currentStep].text;
             tutorialSteps[currentStep].ActivateStep();
             Debug.Log("Activating tutorial step "+currentStep);
-
-
         }
         
     }
