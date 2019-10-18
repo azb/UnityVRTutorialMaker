@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-    public TextMesh tutorialText;
+    public TextMeshPro tutorialText;
 
     public Material highlight, normal;
 
