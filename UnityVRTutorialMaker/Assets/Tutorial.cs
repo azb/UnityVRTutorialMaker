@@ -25,6 +25,8 @@ public class Tutorial : MonoBehaviour
     public VRController vrController;
 
     public FloatTowards floatTowards;
+
+    MeshRenderer inputMeshRenderer;
     
     // Start is called before the first frame update
     void Start()
@@ -47,12 +49,33 @@ public class Tutorial : MonoBehaviour
             tutorialSteps[currentStep].vrInputToHighlight
             );
     }
+    
+    MeshRenderer GetInputMeshRenderer(Transform input)
+    {
+        MeshRenderer result;
+
+        result = input.GetComponent<MeshRenderer>();
+        if (result == null)
+            result = input.parent.GetComponent<MeshRenderer>();
+        
+        if (result == null)
+            Debug.LogError("Input transform has no mesh renderer attached!");
+        
+        return result;
+    }
+
+    public Color highlightColor;
+    Color originalColor;
 
     // Update is called once per frame
     void Update()
     {
-        //alpha = (Mathf.Sin(Time.frameCount / 10f) + 1f) / 2f;
-        //rend.material.color = new Color(alpha,alpha,alpha,1); //SetColor("Albedo", new Color(alpha,alpha,alpha,1));
+        if (inputMeshRenderer != null)
+        { 
+        alpha = (Mathf.Sin(Time.frameCount / 10f) + 1f) / 2f;
+        Color newColor = Color.Lerp(originalColor, highlightColor, alpha);
+        inputMeshRenderer.material.color = newColor; //new Color(alpha,alpha,alpha,1); //SetColor("Albedo", new Color(alpha,alpha,alpha,1));
+        }
     }
 
     public void Next()
@@ -69,6 +92,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
+            ResetInputHighlightMeshRenderer();
             gameObject.SetActive(false);
         }
     }
@@ -105,8 +129,13 @@ public class Tutorial : MonoBehaviour
         Debug.Log("vrInput = "+vrInput);
 
         //Debug.Log(vrInputToTransform[vrInput]);
-        
+
+        ResetInputHighlightMeshRenderer();
+
         Transform newTarget = vrController.VRInputToTransform(vrDevice, vrInput);
+
+        inputMeshRenderer = GetInputMeshRenderer(newTarget);
+        originalColor = inputMeshRenderer.material.color;
 
         Debug.Log("newTarget.name = "+newTarget.name);
         
@@ -115,6 +144,14 @@ public class Tutorial : MonoBehaviour
         else
             Debug.LogError("newTarget is null");
     }
+
+    void ResetInputHighlightMeshRenderer()
+    {
+        if (inputMeshRenderer != null)
+            inputMeshRenderer.material.color = originalColor;
+        
+    }
+
 
 
 
