@@ -52,13 +52,13 @@ public class VRController : MonoBehaviour
         RightControllerButton1 = GameObject.Find("BButton").transform;
         RightControllerJoystick = GameObject.Find("RightJoystick").transform;
         RightControllerTrigger = GameObject.Find("RightTrigger").transform;
-        RightControllerGrip = GameObject.Find("RightGrip").transform;
+        RightControllerGrip = GameObject.Find("RightGripCenter").transform;
 
         LeftControllerButton0 = GameObject.Find("XButton").transform;
         LeftControllerButton1 = GameObject.Find("YButton").transform;
         LeftControllerJoystick = GameObject.Find("LeftJoystick").transform;
         LeftControllerTrigger = GameObject.Find("LeftTrigger").transform;
-        LeftControllerGrip = GameObject.Find("LeftGrip").transform;
+        LeftControllerGrip = GameObject.Find("LeftGripCenter").transform;
         
         leftController = GameObject.Find("LeftControllerAnchor").transform;
         rightController = GameObject.Find("RightControllerAnchor").transform;
@@ -81,8 +81,8 @@ public class VRController : MonoBehaviour
         VRInputToOVRButton.Add(VRInput.Button0, OVRInput.Button.One);
         VRInputToOVRButton.Add(VRInput.Button1, OVRInput.Button.Two);
         VRInputToOVRButton.Add(VRInput.Joystick, OVRInput.Button.PrimaryThumbstick);
-        VRInputToOVRButton.Add(VRInput.Trigger, OVRInput.Button.PrimaryHandTrigger);
-        VRInputToOVRButton.Add(VRInput.Grip, OVRInput.Button.PrimaryShoulder);
+        VRInputToOVRButton.Add(VRInput.Trigger, OVRInput.Button.PrimaryIndexTrigger);
+        VRInputToOVRButton.Add(VRInput.Grip, OVRInput.Button.PrimaryHandTrigger);
 
         
         //rend = LeftControllerButton0.GetComponentInChildren<MeshRenderer>(); 
