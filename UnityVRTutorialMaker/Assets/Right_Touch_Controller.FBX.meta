@@ -11,6 +11,14 @@ ModelImporter:
     100010: r_controller_ply
     100012: //RootNode
     100014: Trigger
+    100016: Text001
+    100018: Text002
+    100020: X
+    100022: Y
+    100024: Box001
+    100026: Box002
+    100028: Box003
+    100030: Box004
     400000: Abutton
     400002: BButton
     400004: Grip
@@ -19,7 +27,16 @@ ModelImporter:
     400010: r_controller_ply
     400012: //RootNode
     400014: Trigger
+    400016: Text001
+    400018: Text002
+    400020: X
+    400022: Y
+    400024: Box001
+    400026: Box002
+    400028: Box003
+    400030: Box004
     2100000: controllerMTL
+    2100002: No Name
     2300000: Abutton
     2300002: BButton
     2300004: Grip
@@ -27,6 +44,14 @@ ModelImporter:
     2300008: OculusHomeButton
     2300010: r_controller_ply
     2300012: Trigger
+    2300014: Text001
+    2300016: Text002
+    2300018: X
+    2300020: Y
+    2300022: Box001
+    2300024: Box002
+    2300026: Box003
+    2300028: Box004
     3300000: Abutton
     3300002: BButton
     3300004: Grip
@@ -34,6 +59,14 @@ ModelImporter:
     3300008: OculusHomeButton
     3300010: r_controller_ply
     3300012: Trigger
+    3300014: Text001
+    3300016: Text002
+    3300018: X
+    3300020: Y
+    3300022: Box001
+    3300024: Box002
+    3300026: Box003
+    3300028: Box004
     4300000: r_controller_ply
     4300002: joystick
     4300004: Abutton
@@ -41,6 +74,14 @@ ModelImporter:
     4300008: OculusHomeButton
     4300010: Trigger
     4300012: Grip
+    4300014: Text001
+    4300016: Text002
+    4300018: X
+    4300020: Y
+    4300022: Box002
+    4300024: Box001
+    4300026: Box003
+    4300028: Box004
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
