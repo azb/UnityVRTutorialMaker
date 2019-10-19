@@ -63,7 +63,42 @@ public class VRController : MonoBehaviour
         return foundTransform;
     }
 
+    public void Vibrate(VRDevice device, float duration, float frequency, float amplitude)
+    {
+        if (platform == Platform.OVR)
+        { 
+        OVRInput.Controller controller = OVRInput.Controller.LTouch;
+            if (device == VRDevice.LeftController)
+                controller = OVRInput.Controller.LTouch;
+            if (device == VRDevice.RightController)
+                controller = OVRInput.Controller.RTouch;
 
+        OVRInput.SetControllerVibration (frequency, amplitude, controller);
+        }
+        if (duration > 0)
+        StopVibrationTimer(device, duration, frequency, amplitude);
+    }
+    
+    void StopVibrationTimer(VRDevice device, float timeRemaining, float frequency, float amplitude)
+    {
+        IEnumerator timer = Timer(device, timeRemaining, frequency, amplitude);
+        StartCoroutine(timer);
+    }
+    IEnumerator Timer(VRDevice device, float timeRemaining, float frequency, float amplitude)
+    {
+        float waitTime = Mathf.Min(timeRemaining, 2f);
+        yield return new WaitForSeconds(waitTime);
+        //Do something
+        timeRemaining -= waitTime;
+        if (timeRemaining > 0)
+        {
+            Vibrate(device, timeRemaining, frequency, amplitude);
+        }
+        else
+        {
+            Vibrate(device, 0, 0, 0);
+        }
+    }
 
 
     // Start is called before the first frame update

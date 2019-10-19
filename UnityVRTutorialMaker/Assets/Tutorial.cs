@@ -48,6 +48,8 @@ public class Tutorial : MonoBehaviour
             tutorialSteps[currentStep].vrDeviceToHighlight,
             tutorialSteps[currentStep].vrInputToHighlight
             );
+
+        StartTutorialVibrationTimer();
     }
     
     MeshRenderer GetInputMeshRenderer(Transform input)
@@ -78,14 +80,32 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+    void StartTutorialVibrationTimer()
+    {
+        IEnumerator timer = TutorialVibrationTimer(1f);
+        StartCoroutine(timer);
+    }
+    IEnumerator TutorialVibrationTimer(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        //Do something
+        if (currentStep < tutorialSteps.Length)
+        { 
+            vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
+            StartTutorialVibrationTimer();
+        }
+    }
+
     public void Next()
     {
+        vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
         currentStep++;
-
+        
         EnableCurrentTutorialStep();
 
         if (currentStep < tutorialSteps.Length)
-        { 
+        {
+        vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
         VRController.VRDevice vrDevice = tutorialSteps[currentStep].vrDeviceToHighlight;
         VRController.VRInput vrInput = tutorialSteps[currentStep].vrInputToHighlight;
         SetTargetTransform(vrDevice, vrInput);
@@ -112,7 +132,6 @@ public class Tutorial : MonoBehaviour
             tutorialSteps[currentStep].ActivateStep();
             Debug.Log("Activating tutorial step "+currentStep);
         }
-        
     }
     
     public void SetTargetTransform(VRController.VRDevice vrDevice, VRController.VRInput vrInput)
