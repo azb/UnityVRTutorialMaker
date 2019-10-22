@@ -19,19 +19,46 @@ public class TutorialStep : MonoBehaviour
     public VRController.VRDevice vrDeviceToHighlight;
     public VRController.VRInput vrInputToHighlight;
 
+    public UnityEvent executeOnEnable, executeOnDisable;
+
+    public GameObject[] objectsToActivate;
+
     //The executeOnCompletion event will be executed when the user presses the 
     //correct button to complete this tutorial step
-    public UnityEvent executeOnCompletion;
+    //public UnityEvent executeOnCompletion;
 
     Hashtable vrInputToOVRInput;
 
     bool stepCompleted;
+
+    int requiredCompletions = 5;
+    int completions;
+
 
     public void ActivateStep()
     {
         Debug.Log("ActivateStep() called for "+gameObject.name);
         
         tutorial.SetTargetTransform(vrDeviceToHighlight, vrInputToHighlight);
+    }
+    
+    void OnEnable()
+    {
+        int count = objectsToActivate.Length;
+
+        for(int i=0;i<count;i++)
+        {
+            objectsToActivate[i].SetActive(true);
+        }
+    }
+    void OnDisable()
+    {
+        int count = objectsToActivate.Length;
+
+        for(int i=0;i<count;i++)
+        {
+            objectsToActivate[i].SetActive(false);
+        }
     }
     
     // Update is called once per frame
@@ -42,12 +69,16 @@ public class TutorialStep : MonoBehaviour
         if (tutorial.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight))
         {
             userCompletedTutorialAction = true;
+            Debug.Log("GetsHere3 userCompletedTutorialAction = true");
         }
         
-        if (userCompletedTutorialAction && !stepCompleted)
+        if (userCompletedTutorialAction)
         {
-            stepCompleted = true;
-            tutorial.Next();
+            Debug.Log("incrementing completions, now completions = "+completions);
+            
+            completions++;
+            tutorial.Next(completions, requiredCompletions);
+            userCompletedTutorialAction = false;
         }
     }
 }

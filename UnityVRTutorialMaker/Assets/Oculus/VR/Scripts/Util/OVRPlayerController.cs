@@ -314,6 +314,12 @@ public class OVRPlayerController : MonoBehaviour
 
 	public virtual void UpdateMovement()
 	{
+        
+		//if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch))
+		//{
+		//	Jump();
+		//}
+
 		if (HaltUpdateMovement)
 			return;
 

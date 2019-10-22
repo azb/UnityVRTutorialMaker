@@ -27,14 +27,45 @@ public class Tutorial : MonoBehaviour
     public FloatTowards floatTowards;
 
     MeshRenderer inputMeshRenderer;
+
+    AudioSource audioSource;
+
+    public Transform 
+        rightJoystickClickArrow,
+        rightJoystickRightArrow,
+        rightJoystickLeftArrow,
+        rightJoystickUpArrow,
+        rightJoystickDownArrow,
+        leftJoystickClickArrow,
+        leftJoystickRightArrow,
+        leftJoystickLeftArrow,
+        leftJoystickUpArrow,
+        leftJoystickDownArrow
+        ;
     
     // Start is called before the first frame update
     void Start()
     {
+        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickClickArrow");
+        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickRightArrow");
+        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickLeftArrow");
+        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickUpArrow");
+        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickDownArrow");
+
+        leftJoystickClickArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+        leftJoystickRightArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+        leftJoystickLeftArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+        leftJoystickUpArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+        leftJoystickDownArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+
+        audioSource = GetComponent<AudioSource>();
+
         tutorialSteps = tutorialStepsParent.GetComponentsInChildren<TutorialStep>();
 
         floatTowards = FindObjectOfType<FloatTowards>();
         vrController = FindObjectOfType<VRController>();
+
+        floatTowards.target1 = TransformUtils.FindTransform("UITarget");
 
         int count = tutorialSteps.Length;
 
@@ -95,25 +126,38 @@ public class Tutorial : MonoBehaviour
             StartTutorialVibrationTimer();
         }
     }
-
-    public void Next()
+    
+    public void Next(int completions, int maxCompletions)
     {
+        Debug.Log("GetsHere2 NEXT");
+
+
         vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
+
+        if (completions >= maxCompletions)
+        {
         currentStep++;
         
         EnableCurrentTutorialStep();
 
         if (currentStep < tutorialSteps.Length)
-        {
-        vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
-        VRController.VRDevice vrDevice = tutorialSteps[currentStep].vrDeviceToHighlight;
-        VRController.VRInput vrInput = tutorialSteps[currentStep].vrInputToHighlight;
-        SetTargetTransform(vrDevice, vrInput);
+            {
+            vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
+            VRController.VRDevice vrDevice = tutorialSteps[currentStep].vrDeviceToHighlight;
+            VRController.VRInput vrInput = tutorialSteps[currentStep].vrInputToHighlight;
+            SetTargetTransform(vrDevice, vrInput);
+            }
+        else
+            {
+                ResetInputHighlightMeshRenderer();
+                gameObject.SetActive(false);
+            }
         }
         else
         {
-            ResetInputHighlightMeshRenderer();
-            gameObject.SetActive(false);
+            tutorialText.text = tutorialSteps[currentStep].text + "\n"+completions+" / "+maxCompletions;
+            Debug.Log("HERE1 tutorialText.text = "+tutorialText.text);
+
         }
     }
 
@@ -138,11 +182,11 @@ public class Tutorial : MonoBehaviour
     {
         if (vrDevice == VRController.VRDevice.LeftController)
         {
-            floatTowards.target = vrController.leftController;
+            floatTowards.target2 = vrController.leftController;
         }
         else
         {
-            floatTowards.target = vrController.rightController;
+            floatTowards.target2 = vrController.rightController;
         }
 
         Debug.Log("vrInput = "+vrInput);
