@@ -80,9 +80,7 @@ public class TutorialStep : MonoBehaviour
     {
         executeOnInputComplete.Invoke();
     }
-
-
-
+    
     // Update is called once per frame
     void Update()
     {
