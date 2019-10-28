@@ -84,9 +84,8 @@ public class OVRGrabber : MonoBehaviour
 
     protected virtual void Awake()
     {
-        Debug.Log("OVRGrabber detected in object "+gameObject.name);
-
-
+        //Debug.Log("OVRGrabber detected in object "+gameObject.name);
+        
         m_anchorOffsetPosition = transform.localPosition;
         m_anchorOffsetRotation = transform.localRotation;
 
