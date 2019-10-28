@@ -8,7 +8,8 @@ using UnityEngine;
 //There should only be one per scene
 //Tutorial steps there can be multiple of
 
-
+namespace VRTutorializer
+{
 [DefaultExecutionOrder(-10)]
 public class Tutorial : MonoBehaviour
 {
@@ -178,4 +179,5 @@ public class Tutorial : MonoBehaviour
 
     }
 
+}
 }
