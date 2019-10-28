@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace VRTutorializer
+{ 
 [DefaultExecutionOrder(-100)]
 public class VRController : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class VRController : MonoBehaviour
     public enum VRInput {
         Button0,
         Button1,
-        Joystick,
+        JoystickClick,
         Trigger,
         Grip,
         MenuButton,
@@ -50,8 +52,6 @@ public class VRController : MonoBehaviour
     public Transform
         leftController,
         rightController;
-    
-    MeshRenderer rend;
     
     public void Vibrate(VRDevice device, float duration, float frequency, float amplitude)
     {
@@ -115,7 +115,7 @@ public class VRController : MonoBehaviour
         rightVRInputToTransform = new Hashtable();
         rightVRInputToTransform.Add(VRInput.Button0, RightControllerButton0);
         rightVRInputToTransform.Add(VRInput.Button1, RightControllerButton1);
-        rightVRInputToTransform.Add(VRInput.Joystick, RightControllerJoystick);
+        rightVRInputToTransform.Add(VRInput.JoystickClick, RightControllerJoystick);
         rightVRInputToTransform.Add(VRInput.JoystickHorizontal, RightControllerJoystick);
         rightVRInputToTransform.Add(VRInput.JoystickVertical, RightControllerJoystick);
         rightVRInputToTransform.Add(VRInput.Trigger, RightControllerTrigger);
@@ -125,17 +125,18 @@ public class VRController : MonoBehaviour
         leftVRInputToTransform = new Hashtable();
         leftVRInputToTransform.Add(VRInput.Button0, LeftControllerButton0);
         leftVRInputToTransform.Add(VRInput.Button1, LeftControllerButton1);
-        leftVRInputToTransform.Add(VRInput.Joystick, LeftControllerJoystick);
+        leftVRInputToTransform.Add(VRInput.JoystickClick, LeftControllerJoystick);
         leftVRInputToTransform.Add(VRInput.JoystickHorizontal, LeftControllerJoystick);
         leftVRInputToTransform.Add(VRInput.JoystickVertical, LeftControllerJoystick);
         leftVRInputToTransform.Add(VRInput.Trigger, LeftControllerTrigger);
         leftVRInputToTransform.Add(VRInput.Grip, LeftControllerGrip);
         leftVRInputToTransform.Add(VRInput.MenuButton, MenuButton);
 
+        //Create hashtable linking generic vrinputs to OVRInputs
         VRInputToOVRButton = new Hashtable();
         VRInputToOVRButton.Add(VRInput.Button0, OVRInput.Button.One);
         VRInputToOVRButton.Add(VRInput.Button1, OVRInput.Button.Two);
-        VRInputToOVRButton.Add(VRInput.Joystick, OVRInput.Button.PrimaryThumbstick);
+        VRInputToOVRButton.Add(VRInput.JoystickClick, OVRInput.Button.PrimaryThumbstick);
         VRInputToOVRButton.Add(VRInput.JoystickHorizontal, OVRInput.Button.PrimaryThumbstickRight);
         VRInputToOVRButton.Add(VRInput.JoystickVertical, OVRInput.Button.PrimaryThumbstickUp);
         VRInputToOVRButton.Add(VRInput.Trigger, OVRInput.Button.PrimaryIndexTrigger);
@@ -145,15 +146,12 @@ public class VRController : MonoBehaviour
         VRInputToOVRButtonAlternate = new Hashtable();
         VRInputToOVRButtonAlternate.Add(VRInput.Button0, OVRInput.Button.One);
         VRInputToOVRButtonAlternate.Add(VRInput.Button1, OVRInput.Button.Two);
-        VRInputToOVRButtonAlternate.Add(VRInput.Joystick, OVRInput.Button.PrimaryThumbstick);
+        VRInputToOVRButtonAlternate.Add(VRInput.JoystickClick, OVRInput.Button.PrimaryThumbstick);
         VRInputToOVRButtonAlternate.Add(VRInput.JoystickHorizontal, OVRInput.Button.PrimaryThumbstickLeft);
         VRInputToOVRButtonAlternate.Add(VRInput.JoystickVertical, OVRInput.Button.PrimaryThumbstickDown);
         VRInputToOVRButtonAlternate.Add(VRInput.Trigger, OVRInput.Button.PrimaryIndexTrigger);
         VRInputToOVRButtonAlternate.Add(VRInput.Grip, OVRInput.Button.PrimaryHandTrigger);
         VRInputToOVRButtonAlternate.Add(VRInput.MenuButton, OVRInput.Button.Start);
-        
-        //rend = LeftControllerButton0.GetComponentInChildren<MeshRenderer>(); 
-        //rend.material = highlight; //.SetColor("Albedo", Color.yellow);
     }
 
     public Transform VRInputToTransform(VRDevice vrDevice, VRInput vrInput)
@@ -165,7 +163,7 @@ public class VRController : MonoBehaviour
         else
             result = (Transform) rightVRInputToTransform[vrInput];
 
-        Debug.Log("VRInputToTransform("+vrDevice+","+vrInput+") result = "+result.name);
+        //Debug.Log("VRInputToTransform("+vrDevice+","+vrInput+") result = "+result.name);
         
         return result;
     }
@@ -194,6 +192,5 @@ public class VRController : MonoBehaviour
             return OVRInput.GetDown(button, controller) || OVRInput.GetDown(buttonAlternate, controller);
         }
     }
-
-
+}
 }
