@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace VRTutorializer
+{ 
 public class FloatTowards : MonoBehaviour
 {
     public Transform target1, target2;
@@ -11,16 +13,11 @@ public class FloatTowards : MonoBehaviour
     public float speed;
 
     public float distance;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
+        if (target1 != null && target2 != null)
         transform.position = (target1.position + target1.forward * distance + target2.position + target2.forward * distance) / 2f + offset;
 
         //transform.position = Vector3.Lerp( 
@@ -29,4 +26,5 @@ public class FloatTowards : MonoBehaviour
         //    Time.deltaTime * speed
         //    );
     }
+}
 }
