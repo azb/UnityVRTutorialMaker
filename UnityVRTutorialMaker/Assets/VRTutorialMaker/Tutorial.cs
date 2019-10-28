@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
+//The tutorial object
+//There should only be one per scene
+//Tutorial steps there can be multiple of
+
+
 [DefaultExecutionOrder(-10)]
 public class Tutorial : MonoBehaviour
 {
@@ -10,66 +16,44 @@ public class Tutorial : MonoBehaviour
 
     public Material highlight, normal;
 
-    public DrawLineBetweenObjects tutorialLine;
-
-    float alpha, time;
+    DrawLineBetweenObjects tutorialLine;
 
     //Tutorial steps parent transform should contain game objects with TutorialStep component 
     //attached to children, where each game object represents another step in the tutorial
     public Transform tutorialStepsParent;
 
-    public TutorialStep[] tutorialSteps;
+    TutorialStep[] tutorialSteps;
 
     int currentStep = 0;
 
-    public VRController vrController;
+    //[HideInInspector]
 
-    public FloatTowards floatTowards;
-
-    MeshRenderer inputMeshRenderer;
+    FloatTowards floatTowards;
 
     AudioSource audioSource;
+    
+    public TutorialScriptableObject tutorialScriptableObject;
 
-    public Transform 
-        rightJoystickClickArrow,
-        rightJoystickRightArrow,
-        rightJoystickLeftArrow,
-        rightJoystickUpArrow,
-        rightJoystickDownArrow,
-        leftJoystickClickArrow,
-        leftJoystickRightArrow,
-        leftJoystickLeftArrow,
-        leftJoystickUpArrow,
-        leftJoystickDownArrow
-        ;
+    TutorialActivator tutorialActivator;
     
     // Start is called before the first frame update
     void Start()
     {
-        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickClickArrow");
-        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickRightArrow");
-        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickLeftArrow");
-        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickUpArrow");
-        rightJoystickClickArrow = TransformUtils.FindTransform("RightJoystickDownArrow");
-
-        leftJoystickClickArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
-        leftJoystickRightArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
-        leftJoystickLeftArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
-        leftJoystickUpArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
-        leftJoystickDownArrow = TransformUtils.FindTransform("LeftJoystickClickArrow");
+        tutorialActivator = GetComponentInParent<TutorialActivator>();
+        
+        tutorialLine = GetComponentInChildren<DrawLineBetweenObjects>();
 
         audioSource = GetComponent<AudioSource>();
 
         tutorialSteps = tutorialStepsParent.GetComponentsInChildren<TutorialStep>();
 
-        floatTowards = FindObjectOfType<FloatTowards>();
-        vrController = FindObjectOfType<VRController>();
-
+        floatTowards = GetComponent<FloatTowards>();
+        
         floatTowards.target1 = TransformUtils.FindTransform("UITarget");
 
         int count = tutorialSteps.Length;
 
-        for(int i=0;i<count;i++)
+        for (int i = 0; i < count; i++)
         {
             tutorialSteps[i].tutorial = this;
         }
@@ -82,35 +66,12 @@ public class Tutorial : MonoBehaviour
 
         StartTutorialVibrationTimer();
     }
-    
-    MeshRenderer GetInputMeshRenderer(Transform input)
-    {
-        MeshRenderer result;
 
-        result = input.GetComponent<MeshRenderer>();
-        if (result == null)
-            result = input.parent.GetComponent<MeshRenderer>();
-        
-        if (result == null)
-            Debug.LogError("Input transform has no mesh renderer attached!");
-        
-        return result;
-    }
-
-    public Color highlightColor;
-    Color originalColor;
-
-    // Update is called once per frame
     void Update()
     {
-        if (inputMeshRenderer != null)
-        { 
-        alpha = (Mathf.Sin(Time.frameCount / 10f) + 1f) / 2f;
-        Color newColor = Color.Lerp(originalColor, highlightColor, alpha);
-        inputMeshRenderer.material.color = newColor; //new Color(alpha,alpha,alpha,1); //SetColor("Albedo", new Color(alpha,alpha,alpha,1));
-        }
+        tutorialScriptableObject.UpdateFlash();
     }
-
+    
     void StartTutorialVibrationTimer()
     {
         IEnumerator timer = TutorialVibrationTimer(1f);
@@ -121,43 +82,54 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         //Do something
         if (currentStep < tutorialSteps.Length)
-        { 
-            vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
+        {
+            tutorialScriptableObject.vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
             StartTutorialVibrationTimer();
         }
     }
-    
+
     public void Next(int completions, int maxCompletions)
     {
-        Debug.Log("GetsHere2 NEXT");
-
-
-        vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
-
-        if (completions >= maxCompletions)
-        {
-        currentStep++;
-        
-        EnableCurrentTutorialStep();
-
         if (currentStep < tutorialSteps.Length)
-            {
-            vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
-            VRController.VRDevice vrDevice = tutorialSteps[currentStep].vrDeviceToHighlight;
-            VRController.VRInput vrInput = tutorialSteps[currentStep].vrInputToHighlight;
-            SetTargetTransform(vrDevice, vrInput);
-            }
-        else
-            {
-                ResetInputHighlightMeshRenderer();
-                gameObject.SetActive(false);
-            }
-        }
-        else
         {
-            tutorialText.text = tutorialSteps[currentStep].text + "\n"+completions+" / "+maxCompletions;
-            Debug.Log("HERE1 tutorialText.text = "+tutorialText.text);
+            tutorialScriptableObject.vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
 
+            if (completions >= maxCompletions)
+            {
+                currentStep++;
+
+                if (currentStep < tutorialSteps.Length)
+                {
+                    tutorialScriptableObject.vrController.Vibrate(tutorialSteps[currentStep].vrDeviceToHighlight, .03f, 1f, .5f);
+                    VRController.VRDevice vrDevice = tutorialSteps[currentStep].vrDeviceToHighlight;
+                    VRController.VRInput vrInput = tutorialSteps[currentStep].vrInputToHighlight;
+                    SetTargetTransform(vrDevice, vrInput);
+                }
+                else
+                {
+                    ResetInputHighlightMeshRenderer();
+                    tutorialScriptableObject.HideAllJoystickArrows();
+
+                    tutorialScriptableObject.SetTutorialOpen(null);
+
+                    if (tutorialActivator.reoccuring)
+                    {
+                    currentStep = 0;
+                    }
+                    else
+                    {
+                    tutorialActivator.enabled = false;
+                    }
+
+                    gameObject.SetActive(false);
+                }
+
+                EnableCurrentTutorialStep();
+            }
+            else
+            {
+                tutorialText.text = tutorialSteps[currentStep].text + "\n" + completions + " / " + maxCompletions;
+            }
         }
     }
 
@@ -165,7 +137,7 @@ public class Tutorial : MonoBehaviour
     {
         int count = tutorialSteps.Length;
 
-        for(int i=0;i<count;i++)
+        for (int i = 0; i < count; i++)
         {
             tutorialSteps[i].gameObject.SetActive(i == currentStep);
         }
@@ -174,34 +146,26 @@ public class Tutorial : MonoBehaviour
         {
             tutorialText.text = tutorialSteps[currentStep].text;
             tutorialSteps[currentStep].ActivateStep();
-            Debug.Log("Activating tutorial step "+currentStep);
         }
     }
-    
+
     public void SetTargetTransform(VRController.VRDevice vrDevice, VRController.VRInput vrInput)
     {
         if (vrDevice == VRController.VRDevice.LeftController)
         {
-            floatTowards.target2 = vrController.leftController;
+            floatTowards.target2 = tutorialScriptableObject.vrController.leftController;
         }
         else
         {
-            floatTowards.target2 = vrController.rightController;
+            floatTowards.target2 = tutorialScriptableObject.vrController.rightController;
         }
-
-        Debug.Log("vrInput = "+vrInput);
-
-        //Debug.Log(vrInputToTransform[vrInput]);
 
         ResetInputHighlightMeshRenderer();
 
-        Transform newTarget = vrController.VRInputToTransform(vrDevice, vrInput);
+        Transform newTarget = tutorialScriptableObject.vrController.VRInputToTransform(vrDevice, vrInput);
 
-        inputMeshRenderer = GetInputMeshRenderer(newTarget);
-        originalColor = inputMeshRenderer.material.color;
+        tutorialScriptableObject.FlashObject(newTarget);
 
-        Debug.Log("newTarget.name = "+newTarget.name);
-        
         if (newTarget != null)
             tutorialLine.object1 = newTarget;
         else
@@ -210,13 +174,8 @@ public class Tutorial : MonoBehaviour
 
     void ResetInputHighlightMeshRenderer()
     {
-        if (inputMeshRenderer != null)
-            inputMeshRenderer.material.color = originalColor;
-        
+        tutorialScriptableObject.ResetInputHighlight();
+
     }
-
-
-
-
 
 }

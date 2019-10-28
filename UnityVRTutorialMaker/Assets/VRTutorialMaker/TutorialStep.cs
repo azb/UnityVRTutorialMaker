@@ -5,6 +5,10 @@ using UnityEngine.Events;
 
 public class TutorialStep : MonoBehaviour
 {
+    public enum ActivationType { Enabled, CloseToPlayer };
+
+    public ActivationType activateWhen;
+
     public Tutorial tutorial;
 
     //The tutorial text for this tutorial step
@@ -19,9 +23,9 @@ public class TutorialStep : MonoBehaviour
     public VRController.VRDevice vrDeviceToHighlight;
     public VRController.VRInput vrInputToHighlight;
 
-    public UnityEvent executeOnEnable, executeOnDisable;
+    public UnityEvent executeOnEnable, executeOnDisable, executeOnInputComplete;
 
-    public GameObject[] objectsToActivate;
+    public GameObject[] objectsToActivateOnEnable;
 
     //The executeOnCompletion event will be executed when the user presses the 
     //correct button to complete this tutorial step
@@ -31,51 +35,65 @@ public class TutorialStep : MonoBehaviour
 
     bool stepCompleted;
 
-    int requiredCompletions = 5;
+    public int requiredCompletions = 1;
     int completions;
 
+    public TutorialScriptableObject tutorialScriptableObject;
+
+    void Start()
+    {
+
+    }
 
     public void ActivateStep()
-    {
-        Debug.Log("ActivateStep() called for "+gameObject.name);
-        
+    {   
         tutorial.SetTargetTransform(vrDeviceToHighlight, vrInputToHighlight);
     }
     
     void OnEnable()
     {
-        int count = objectsToActivate.Length;
+        int count = objectsToActivateOnEnable.Length;
 
         for(int i=0;i<count;i++)
         {
-            objectsToActivate[i].SetActive(true);
+            objectsToActivateOnEnable[i].SetActive(true);
         }
+
+        tutorialScriptableObject.ShowJoystickArrows(vrDeviceToHighlight, vrInputToHighlight);
     }
+
     void OnDisable()
     {
-        int count = objectsToActivate.Length;
+        int count = objectsToActivateOnEnable.Length;
 
         for(int i=0;i<count;i++)
         {
-            objectsToActivate[i].SetActive(false);
+            objectsToActivateOnEnable[i].SetActive(false);
         }
+
+        tutorialScriptableObject.HideAllJoystickArrows();
     }
     
+    void OnInputComplete()
+    {
+        executeOnInputComplete.Invoke();
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
         bool userCompletedTutorialAction = false;
 
-        if (tutorial.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight))
+        if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight))
         {
             userCompletedTutorialAction = true;
-            Debug.Log("GetsHere3 userCompletedTutorialAction = true");
+            OnInputComplete();
         }
         
         if (userCompletedTutorialAction)
-        {
-            Debug.Log("incrementing completions, now completions = "+completions);
-            
+        {   
             completions++;
             tutorial.Next(completions, requiredCompletions);
             userCompletedTutorialAction = false;
