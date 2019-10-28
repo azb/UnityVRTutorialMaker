@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace VRTutorializer
+{
 public class TutorialStep : MonoBehaviour
 {
     public enum ActivationType { Enabled, CloseToPlayer };
@@ -99,4 +101,5 @@ public class TutorialStep : MonoBehaviour
             userCompletedTutorialAction = false;
         }
     }
+}
 }
