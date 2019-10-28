@@ -89,7 +89,6 @@ public class TutorialStep : MonoBehaviour
         if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight))
         {
             userCompletedTutorialAction = true;
-            OnInputComplete();
         }
         
         if (userCompletedTutorialAction)
@@ -97,6 +96,8 @@ public class TutorialStep : MonoBehaviour
             completions++;
             tutorial.Next(completions, requiredCompletions);
             userCompletedTutorialAction = false;
+            if (completions >= requiredCompletions)
+                OnInputComplete();
         }
     }
 }
