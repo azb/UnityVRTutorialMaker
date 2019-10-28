@@ -85,9 +85,6 @@ public class TutorialActivator : MonoBehaviour
         tutorialScriptableObject.SetTutorialOpen(null);
     }
 
-
-
-    
     // Update is called once per frame
     void Update()
     {
