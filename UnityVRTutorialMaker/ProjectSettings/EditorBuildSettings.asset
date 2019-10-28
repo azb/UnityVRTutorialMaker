@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/VRTutorialMaker/TutorialMakerExampleScene.unity
+    path: Assets/VRTutorialMaker/Scenes/TutorialMakerExampleScene.unity
     guid: 720d9526f4f0b0b4ea7fdedc0a6e83e2
   - enabled: 1
-    path: Assets/VRTutorialMaker/TutorialMakerExampleScene2.unity
+    path: Assets/VRTutorialMaker/Scenes/TutorialMakerExampleScene2.unity
     guid: f55a9c117e010ff44afdf3ea80b096fb
   m_configObjects: {}
