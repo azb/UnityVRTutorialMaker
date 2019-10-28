@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace VRTutorializer
+{ 
 public class RotateTowardsObject : MonoBehaviour
 {
     public Transform target;
 
     public Vector3 offset;
+
+    public bool x, y, z;
 
     // Start is called before the first frame update
     void Start()
@@ -30,11 +34,17 @@ public class RotateTowardsObject : MonoBehaviour
             target.position.y - transform.position.y,
             dist
             ) * Mathf.Rad2Deg;
+        
+        if (!x)
+            xdir = 0;
 
         float ydir = Mathf.Atan2( 
             target.position.z - transform.position.z,
             target.position.x - transform.position.x
             ) * Mathf.Rad2Deg;
+        
+        if (!y)
+            ydir = 0;
 
         transform.rotation = Quaternion.Euler(
             xdir + offset.x,
@@ -42,4 +52,5 @@ public class RotateTowardsObject : MonoBehaviour
             offset.z
             );
     }
+}
 }
