@@ -1,0 +1,25 @@
+Instructions to import VR Tutorial Maker:
+
+1. Import the VR Tutorial Maker unity package into the Assets folder of your project (can also be in a subfolder).
+
+2. Place the VRTutorialMaker > Prefabs > ExampleTutorial prefab in your game scene.
+(You might be prompted to import Text Mesh Pro if you haven't already.)
+Congrats, you now have a tutorial in your game!
+
+3. You can modify what the tutorial says and what buttons it points at on the controller by expanding the ExampleTutorial game object in your scene.
+Go into ExampleTutorial > Tutorial > Tutorial Steps
+You will see there is an individual game object for every step of the tutorial. You can add more steps to the tutorial, or remove steps from the tutorial, by duplicating or deleting these Tutorial Step game objects.
+
+4. Make sure the player object in your scene is tagged "Player". VR Tutorializer needs this to know where the player is located so it can know when to open the tutorial.
+
+You can modify what each tutorial step does in it's Tutorial Step component.
+Here are the different parameters you can tweak:
+
+1. 
+
+
+
+
+
+
+1. Activate When - this parameter allows you to choose when the tutorial appears.
