@@ -8,9 +8,7 @@ namespace VRTutorializer
 public class TutorialStep : MonoBehaviour
 {
     public enum ActivationType { Enabled, CloseToPlayer };
-
-    public ActivationType activateWhen;
-
+        
     public Tutorial tutorial;
 
     //The tutorial text for this tutorial step
@@ -44,7 +42,7 @@ public class TutorialStep : MonoBehaviour
 
     void Start()
     {
-
+        Debug.Log("Tutorial Step Start");
     }
 
     public void ActivateStep()
