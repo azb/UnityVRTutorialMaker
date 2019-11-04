@@ -6,7 +6,7 @@ namespace VRTutorializer
 {
 public class TutorialActivator : MonoBehaviour
 {
-    public Transform player;
+    Transform player;
 
     public float activationDistance;
 
@@ -29,6 +29,30 @@ public class TutorialActivator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        GameObject playerGO = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerGO != null)
+            {
+            player = playerGO.transform;
+                Debug.Log("player with Tag Player found successfully");
+
+
+            }
+        else
+            {
+            playerGO = GameObject.FindGameObjectWithTag("MainCamera");        
+            if (playerGO == null)
+                {
+                Debug.LogError("VR Tutorial Maker couldn't find the player game object in the scene. Make sure the player game object is active in the scene and tagged \"Player\"");
+                }
+            else
+                {
+                player = playerGO.transform;
+                Debug.Log("player with Tag MainCamera found successfully");
+                }
+            }
+
         //StartProximityCheckTimer(timeBetweenChecks);
         child = transform.GetChild(0).gameObject;
         child.SetActive(false);
@@ -52,6 +76,9 @@ public class TutorialActivator : MonoBehaviour
 
     void DoProximityActivation()
     {
+            Debug.Log("player = "+player);
+            
+
         float distanceToPlayer = Vector3.Distance(transform.position, player.position + player.forward);
         bool playerInRange = (distanceToPlayer < activationDistance);
         
