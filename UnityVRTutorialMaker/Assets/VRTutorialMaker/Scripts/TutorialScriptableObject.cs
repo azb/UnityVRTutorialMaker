@@ -93,6 +93,9 @@ public class TutorialScriptableObject : ScriptableObject
     // Initialize is called from ScriptableObjectSpawner.cs
     public void Initialize()
     {   
+            Debug.Log("Initialize TutorialScriptableObject");
+
+
         vrController = FindObjectOfType<VRController>();
 
         GetJoystickClickArrowTransforms();        
