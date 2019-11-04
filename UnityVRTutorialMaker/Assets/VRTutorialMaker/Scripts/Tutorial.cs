@@ -40,6 +40,9 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Tutorial Start");
+
+
         tutorialActivator = GetComponentInParent<TutorialActivator>();
         
         tutorialLine = GetComponentInChildren<DrawLineBetweenObjects>();
@@ -158,6 +161,13 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
+                Debug.Log("GetsHere11");
+
+
+                Debug.Log("tutorialScriptableObject.vrController = "+tutorialScriptableObject.vrController);
+                Debug.Log("tutorialScriptableObject.vrController.rightController = "+tutorialScriptableObject.vrController.rightController);
+
+
             floatTowards.target2 = tutorialScriptableObject.vrController.rightController;
         }
 
