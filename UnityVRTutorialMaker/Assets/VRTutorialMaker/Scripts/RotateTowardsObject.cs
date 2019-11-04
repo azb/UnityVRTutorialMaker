@@ -6,7 +6,8 @@ namespace VRTutorializer
 { 
 public class RotateTowardsObject : MonoBehaviour
 {
-    public Transform target;
+    public string targetTag;
+    Transform target;
 
     public Vector3 offset;
 
@@ -15,7 +16,7 @@ public class RotateTowardsObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag(targetTag).transform; //TransformUtils.FindTransform(targetTag);
     }
 
     // Update is called once per frame
