@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace VRTutorializer
+{
 public class TransformUtils : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
     public static Transform FindTransform(string name)
     {
         GameObject foundGameObject = GameObject.Find(name);
@@ -26,4 +22,5 @@ public class TransformUtils : MonoBehaviour
 
         return foundTransform;
     }
+}
 }
