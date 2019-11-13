@@ -161,13 +161,6 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-                Debug.Log("GetsHere11");
-
-
-                Debug.Log("tutorialScriptableObject.vrController = "+tutorialScriptableObject.vrController);
-                Debug.Log("tutorialScriptableObject.vrController.rightController = "+tutorialScriptableObject.vrController.rightController);
-
-
             floatTowards.target2 = tutorialScriptableObject.vrController.rightController;
         }
 
