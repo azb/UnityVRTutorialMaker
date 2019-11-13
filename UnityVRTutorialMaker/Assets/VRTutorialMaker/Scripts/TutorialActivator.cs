@@ -55,7 +55,13 @@ public class TutorialActivator : MonoBehaviour
 
         //StartProximityCheckTimer(timeBetweenChecks);
         child = transform.GetChild(0).gameObject;
-        child.SetActive(false);
+
+        if(activateThisTutorialWhen == ActivateBehavior.ThePlayerIsNearby)
+            {
+            child.SetActive(false);
+            }
+
+
 
     }
 
@@ -76,9 +82,6 @@ public class TutorialActivator : MonoBehaviour
 
     void DoProximityActivation()
     {
-            Debug.Log("player = "+player);
-            
-
         float distanceToPlayer = Vector3.Distance(transform.position, player.position + player.forward);
         bool playerInRange = (distanceToPlayer < activationDistance);
         
