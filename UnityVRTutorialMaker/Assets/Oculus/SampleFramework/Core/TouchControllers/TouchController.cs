@@ -11,7 +11,7 @@ namespace OVRTouchSample
     public class TouchController : MonoBehaviour
     {
         [SerializeField]
-        private OVRInput.Controller m_controller;
+        private OVRInput.Controller m_controller = new OVRInput.Controller();
         [SerializeField]
         private Animator m_animator = null;
 

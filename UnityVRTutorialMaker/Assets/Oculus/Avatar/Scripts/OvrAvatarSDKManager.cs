@@ -23,7 +23,6 @@ public class OvrAvatarSDKManager : MonoBehaviour
     private bool avatarSpecRequestAvailable = true;
     private float lastDispatchedAvatarSpecRequestTime = 0f;
     private const float AVATAR_SPEC_REQUEST_TIMEOUT = 5f;
-    private ovrAvatarDebugContext debugContext = ovrAvatarDebugContext.None;
 
     public struct AvatarSpecRequestParams
     {

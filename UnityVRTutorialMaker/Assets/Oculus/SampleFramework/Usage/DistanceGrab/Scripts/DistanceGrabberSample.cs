@@ -48,7 +48,7 @@ namespace OculusSampleFramework
         }
 
         [SerializeField]
-        DistanceGrabber[] m_grabbers;
+        DistanceGrabber[] m_grabbers = null;
 
         // Use this for initialization
         void Start()
