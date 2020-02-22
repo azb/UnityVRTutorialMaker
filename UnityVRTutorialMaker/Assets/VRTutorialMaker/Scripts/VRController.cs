@@ -116,10 +116,7 @@ namespace VRTutorializer
                 this.enabled = false;
                 return;
             }
-
-            Debug.Log("GetsHere17 " + gameObject.name);
-
-
+            
             RightControllerButton0 = TransformUtils.FindTransform("AButton");
             RightControllerButton1 = TransformUtils.FindTransform("BButton");
             RightControllerJoystick = TransformUtils.FindTransform("RightJoystickCenter");

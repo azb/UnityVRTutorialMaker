@@ -16,8 +16,6 @@ public class VR : MonoBehaviour
     {
         string model = UnityEngine.XR.XRDevice.model.ToLower();
         
-        Debug.Log("VR Device Model = "+model);
-
         Platform platform = Platform.None;
         
         if (model == "")
