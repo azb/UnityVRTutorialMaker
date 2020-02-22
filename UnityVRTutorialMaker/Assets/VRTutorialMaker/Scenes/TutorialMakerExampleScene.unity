@@ -5358,17 +5358,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
   audioClip: {fileID: 0}
   text: Press B to say bye
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 1
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -6890,6 +6890,7 @@ MonoBehaviour:
   tutorialStepsParent: {fileID: 1172551467}
   tutorialScriptableObject: {fileID: 11400000, guid: d1f292cd02a4b2141b90825be8c115d3,
     type: 2}
+  subObjectiveCompleteSoundEffect: {fileID: 0}
 --- !u!114 &1552845596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7058,28 +7059,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
   audioClip: {fileID: 0}
   text: Press A to talk
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 0
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 696459557}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -7087,7 +7077,7 @@ MonoBehaviour:
   executeOnInputComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1028384543}
+      - m_Target: {fileID: 696459557}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9405,6 +9395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 5915920401900257948, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5915920401900257949, guid: 2faff09c8662bc444919499b2383f471,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9489,6 +9484,81 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400158273754, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400248952640, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400343491397, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400541357593, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400647321900, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400707887661, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920400961792581, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401090330625, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401383592806, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401510303250, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401566731991, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401635631838, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401783709414, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401826556371, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915920401843464998, guid: 2faff09c8662bc444919499b2383f471,
+        type: 3}
+      propertyPath: completeStepOnInput
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2faff09c8662bc444919499b2383f471, type: 3}

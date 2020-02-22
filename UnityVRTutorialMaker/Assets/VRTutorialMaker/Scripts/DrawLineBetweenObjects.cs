@@ -21,15 +21,36 @@ public class DrawLineBetweenObjects : MonoBehaviour
     void Update()
     {
         if (object1 != null)
-        line.SetPosition(0, object1.position + offset1);
+        {
+            line.SetPosition(0, object1.position + offset1);
+        }
         else
+        {
             Debug.LogError("object1 is null");
+        }
 
         if (object2 != null)
-        line.SetPosition(1, object2.position + offset2);
+        {
+            line.SetPosition(1, object2.position + offset2);
+        }
         else
+        {
             Debug.LogError("object2 is null");
+        }
+    }
 
-
+    public void OnEnable()
+    {
+        if (line != null)
+        {
+            line.enabled = true;
+        }
+    }
+    public void OnDisable()
+    {
+        if (line != null)
+        {
+            line.enabled = false;
+        }
     }
 }

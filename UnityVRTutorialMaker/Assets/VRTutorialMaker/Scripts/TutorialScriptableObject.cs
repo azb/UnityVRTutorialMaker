@@ -31,7 +31,7 @@ public class TutorialScriptableObject : ScriptableObject
     MeshRenderer inputMeshRenderer;
     
     float alpha, time;
-
+        
     void GetJoystickClickArrowTransforms()
     {
         
@@ -46,6 +46,8 @@ public class TutorialScriptableObject : ScriptableObject
         leftJoystickLeftArrow = TransformUtils.FindTransform("LeftJoystickLeftArrow");
         leftJoystickUpArrow = TransformUtils.FindTransform("LeftJoystickUpArrow");
         leftJoystickDownArrow = TransformUtils.FindTransform("LeftJoystickDownArrow");
+
+        
 
         rightJoystickClickArrow.gameObject.SetActive(false);
         rightJoystickRightArrow.gameObject.SetActive(false);
@@ -63,14 +65,17 @@ public class TutorialScriptableObject : ScriptableObject
     
     MeshRenderer GetInputMeshRenderer(Transform input)
     {
-        MeshRenderer result;
+        MeshRenderer result = null;
 
+        if (input != null)
+        {
         result = input.GetComponent<MeshRenderer>();
         if (result == null)
             result = input.parent.GetComponent<MeshRenderer>();
 
         if (result == null)
             Debug.LogError("Input transform has no mesh renderer attached!");
+        }
 
         return result;
     }
@@ -92,10 +97,7 @@ public class TutorialScriptableObject : ScriptableObject
     
     // Initialize is called from ScriptableObjectSpawner.cs
     public void Initialize()
-    {   
-            Debug.Log("Initialize TutorialScriptableObject");
-
-
+    {
         vrController = FindObjectOfType<VRController>();
 
         GetJoystickClickArrowTransforms();        
@@ -149,10 +151,12 @@ public class TutorialScriptableObject : ScriptableObject
     {
         if (vrDevice == VRController.VRDevice.LeftController)
         {
+        if (leftJoystickClickArrow != null)
         leftJoystickClickArrow.gameObject.SetActive(visible);
         }
         else
         { 
+        if (rightJoystickClickArrow != null)
         rightJoystickClickArrow.gameObject.SetActive(visible);
         }
     }
@@ -161,12 +165,16 @@ public class TutorialScriptableObject : ScriptableObject
     {
         if (vrDevice == VRController.VRDevice.LeftController)
         {
+        if (leftJoystickRightArrow != null)
         leftJoystickRightArrow.gameObject.SetActive(visible);
+        if (leftJoystickLeftArrow != null)
         leftJoystickLeftArrow.gameObject.SetActive(visible);
         }
         else
         { 
+        if (rightJoystickRightArrow != null)
         rightJoystickRightArrow.gameObject.SetActive(visible);
+        if (rightJoystickLeftArrow != null)
         rightJoystickLeftArrow.gameObject.SetActive(visible);
         }
     }
@@ -175,12 +183,16 @@ public class TutorialScriptableObject : ScriptableObject
     {
         if (vrDevice == VRController.VRDevice.LeftController)
         {
+        if (leftJoystickUpArrow != null)
         leftJoystickUpArrow.gameObject.SetActive(visible);
+        if (leftJoystickDownArrow != null)
         leftJoystickDownArrow.gameObject.SetActive(visible);
         }
         else
         { 
+        if (rightJoystickUpArrow != null)
         rightJoystickUpArrow.gameObject.SetActive(visible);
+        if (rightJoystickDownArrow != null)
         rightJoystickDownArrow.gameObject.SetActive(visible);
         }
     }
@@ -188,7 +200,10 @@ public class TutorialScriptableObject : ScriptableObject
     public void ResetInputHighlight()
     {
         if (inputMeshRenderer != null)
+            {
             inputMeshRenderer.material.color = originalColor;
+            inputMeshRenderer = null;
+            }
     }
 
     public void FlashObject(Transform objectToFlash)

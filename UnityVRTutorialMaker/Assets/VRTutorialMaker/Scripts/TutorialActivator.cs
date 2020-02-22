@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace VRTutorializer
 {
+[DefaultExecutionOrder(-500)]
 public class TutorialActivator : MonoBehaviour
 {
     Transform player;
@@ -25,7 +26,7 @@ public class TutorialActivator : MonoBehaviour
     float timeBetweenChecks = .1f;
     
     public bool reoccuring;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +50,6 @@ public class TutorialActivator : MonoBehaviour
             else
                 {
                 player = playerGO.transform;
-                Debug.Log("player with Tag MainCamera found successfully");
                 }
             }
 

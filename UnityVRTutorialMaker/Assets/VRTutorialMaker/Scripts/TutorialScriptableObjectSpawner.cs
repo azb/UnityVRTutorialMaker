@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace VRTutorializer
 {
-[DefaultExecutionOrder(-20)]
+[DefaultExecutionOrder(-300)]
 public class TutorialScriptableObjectSpawner : MonoBehaviour
 {
     public TutorialScriptableObject tutorialSO;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         tutorialSO.Initialize();
     }

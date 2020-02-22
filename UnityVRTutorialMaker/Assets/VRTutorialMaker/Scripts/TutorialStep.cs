@@ -5,112 +5,170 @@ using UnityEngine.Events;
 
 namespace VRTutorializer
 {
-public class TutorialStep : MonoBehaviour
-{
-    public enum ActivationType { Enabled, CloseToPlayer };
+    [DefaultExecutionOrder(-100)]
+    public class TutorialStep : MonoBehaviour
+    {
+        public enum ActivationType { Enabled, CloseToPlayer };
+
+        public Transform pointAt;
+
+        public Tutorial tutorial;
+
+        //Use this audio clip to have narration for your tutorial
+        public AudioClip audioClip;
+
+        //The tutorial text for this tutorial step
+        [TextArea]
+        public string text;
+
+        public Sprite[] sprite;
+
+        public AnimationClip animationClip;
+
+        //The controller on which the user must press a button to complete this tutorial step
+        //public OVRInput.Controller controller;
+
+        //The button the user must press to complete this tutorial step
+        //public OVRInput.Button button;
+
+        [Header("Which controller should be highlighted in this tutorial step?")]
+        public VRController.VRDevice vrDeviceToHighlight;
+        [Header("Which button, joystick, or trigger should be highlighted in this tutorial step?")]
+        public VRController.VRInput vrInputToHighlight;
+
+        public VRController.VRInputAction action;
+
+        [Header("Complete this tutorial step when the user triggers this input?")]
+        public bool completeStepOnInput = true;
         
-    public Tutorial tutorial;
+        [Header("What actions should be executed when this tutorial step is enabled?")]
+        public UnityEvent executeOnEnable;
 
-    //Use this audio clip to have narration for your tutorial
-    public AudioClip audioClip;
+        [Header("What actions should be executed when the user completes this tutorial step?")]
+        public UnityEvent executeOnInputComplete;
 
-    //The tutorial text for this tutorial step
-    [TextArea]
-    public string text;
-    
-    //The controller on which the user must press a button to complete this tutorial step
-    //public OVRInput.Controller controller;
+        public GameObject[] objectsToActivateOnEnable;
 
-    //The button the user must press to complete this tutorial step
-    //public OVRInput.Button button;
-    
-    public VRController.VRDevice vrDeviceToHighlight;
-    public VRController.VRInput vrInputToHighlight;
+        bool userCompletedTutorialActionEventTriggered = false;
 
-    public UnityEvent executeOnEnable, executeOnDisable, executeOnInputComplete;
+        //The executeOnCompletion event will be executed when the user presses the 
+        //correct button to complete this tutorial step
+        //public UnityEvent executeOnCompletion;
 
-    public GameObject[] objectsToActivateOnEnable;
-        
-    bool userCompletedTutorialActionEventTriggered = false;
+        Hashtable vrInputToOVRInput;
 
-    //The executeOnCompletion event will be executed when the user presses the 
-    //correct button to complete this tutorial step
-    //public UnityEvent executeOnCompletion;
+        bool stepCompleted;
 
-    Hashtable vrInputToOVRInput;
+        public int requiredCompletions = 1;
+        int completions;
 
-    bool stepCompleted;
+        public TutorialScriptableObject tutorialScriptableObject;
 
-    public int requiredCompletions = 1;
-    int completions;
+        bool started;
 
-    public TutorialScriptableObject tutorialScriptableObject;
-
-    void Start()
-    {
-        Debug.Log("Tutorial Step Start");
-    }
-
-    public void ActivateStep()
-    {   
-        tutorial.SetTargetTransform(vrDeviceToHighlight, vrInputToHighlight);
-    }
-    
-    void OnEnable()
-    {
-        int count = objectsToActivateOnEnable.Length;
-
-        for(int i=0;i<count;i++)
+        void Start()
         {
-            objectsToActivateOnEnable[i].SetActive(true);
+            if (VR.GetPlatform() == VR.Platform.OculusGo)
+            {
+                text = text.Replace("Press A", "Press the thumb pad");
+            }
+            started = true;
         }
 
-        tutorialScriptableObject.ShowJoystickArrows(vrDeviceToHighlight, vrInputToHighlight);
-    }
-
-    void OnDisable()
-    {
-        int count = objectsToActivateOnEnable.Length;
-
-        for(int i=0;i<count;i++)
+        public void ActivateStep()
         {
-            objectsToActivateOnEnable[i].SetActive(false);
+            if (pointAt == null)
+            {
+                tutorial.SetTargetTransform(vrDeviceToHighlight, vrInputToHighlight);
+            }
+            else
+            {
+                tutorial.SetTargetTransform(pointAt);
+            }
+
+            executeOnEnable.Invoke();
+
+            int count = objectsToActivateOnEnable.Length;
+
+            for (int i = 0; i < count; i++)
+            {
+                objectsToActivateOnEnable[i].SetActive(true);
+            }
+
+            tutorialScriptableObject.ShowJoystickArrows(vrDeviceToHighlight, vrInputToHighlight);
         }
 
-        tutorialScriptableObject.HideAllJoystickArrows();
-    }
-    
-    void OnInputComplete()
-    {
-        executeOnInputComplete.Invoke();
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        bool userCompletedTutorialAction = false;
-
-        if (vrDeviceToHighlight != VRController.VRDevice.None && vrInputToHighlight != VRController.VRInput.None)
-        if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight)
-            || userCompletedTutorialActionEventTriggered)
+        void OnEnable()
         {
-            userCompletedTutorialAction = true;
-            userCompletedTutorialActionEventTriggered = false;
-        }
-        
-        if (userCompletedTutorialAction)
-        {   
-            completions++;
-            tutorial.Next(completions, requiredCompletions);
-            userCompletedTutorialAction = false;
-            if (completions >= requiredCompletions)
-                OnInputComplete();
-        }
-    }
+            if (!started)
+                return;
 
-    public void CompleteTutorialStep()
-    {
-        userCompletedTutorialActionEventTriggered = true;
+            int count = objectsToActivateOnEnable.Length;
+
+            for (int i = 0; i < count; i++)
+            {
+                objectsToActivateOnEnable[i].SetActive(true);
+            }
+
+            tutorialScriptableObject.ShowJoystickArrows(vrDeviceToHighlight, vrInputToHighlight);
+        }
+
+        void OnDisable()
+        {
+            if (!started)
+                return;
+
+            int count = objectsToActivateOnEnable.Length;
+
+            for (int i = 0; i < count; i++)
+            {
+                objectsToActivateOnEnable[i].SetActive(false);
+            }
+
+            tutorialScriptableObject.HideAllJoystickArrows();
+        }
+
+        void OnInputComplete()
+        {
+            executeOnInputComplete.Invoke();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            bool userCompletedTutorialAction = false;
+            
+            if (completeStepOnInput)
+            {
+                if (vrDeviceToHighlight != VRController.VRDevice.None && vrInputToHighlight != VRController.VRInput.None)
+                {
+                    if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight, action))
+                    {
+                        userCompletedTutorialAction = true;
+                    }
+                }
+            }
+
+            if (userCompletedTutorialActionEventTriggered)
+            {
+                userCompletedTutorialAction = true;
+                userCompletedTutorialActionEventTriggered = false;
+            }
+
+
+            if (userCompletedTutorialAction)
+            {
+                completions++;
+                tutorial.Next(completions, requiredCompletions);
+                userCompletedTutorialAction = false;
+                if (completions >= requiredCompletions)
+                    OnInputComplete();
+            }
+        }
+
+        public void CompleteTutorialStep()
+        {
+            userCompletedTutorialActionEventTriggered = true;
+        }
     }
-}
 }
