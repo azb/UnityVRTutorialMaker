@@ -35,3 +35,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 UnityVRTutorialMaker/Assets/VRTutorialMaker/sync.ffs_db.meta
+*.ffs_db
