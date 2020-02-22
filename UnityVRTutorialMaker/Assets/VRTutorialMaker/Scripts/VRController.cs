@@ -14,7 +14,8 @@ public class VRController : MonoBehaviour
 
     public enum VRDevice {
         RightController,
-        LeftController
+        LeftController,
+        None
     }
 
     public enum VRInput {
@@ -26,7 +27,8 @@ public class VRController : MonoBehaviour
         MenuButton,
         HomeButton,
         JoystickHorizontal,
-        JoystickVertical
+        JoystickVertical,
+        None
     }
 
     const Platform platform = Platform.OVR;
@@ -94,6 +96,9 @@ public class VRController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+            Debug.Log("GetsHere17 "+gameObject.name);
+            
+
         RightControllerButton0 = TransformUtils.FindTransform("AButton");
         RightControllerButton1 = TransformUtils.FindTransform("BButton");
         RightControllerJoystick = TransformUtils.FindTransform("RightJoystickCenter");
@@ -112,7 +117,12 @@ public class VRController : MonoBehaviour
         leftController = TransformUtils.FindTransform("LeftControllerAnchor");
         rightController = TransformUtils.FindTransform("RightControllerAnchor");
 
+		transform.parent = rightController;
+		transform.localPosition = Vector3.zero;
+		transform.localRotation = Quaternion.identity;
+
         rightVRInputToTransform = new Hashtable();
+
         rightVRInputToTransform.Add(VRInput.Button0, RightControllerButton0);
         rightVRInputToTransform.Add(VRInput.Button1, RightControllerButton1);
         rightVRInputToTransform.Add(VRInput.JoystickClick, RightControllerJoystick);
@@ -123,6 +133,7 @@ public class VRController : MonoBehaviour
         rightVRInputToTransform.Add(VRInput.MenuButton, HomeButton);
         
         leftVRInputToTransform = new Hashtable();
+		
         leftVRInputToTransform.Add(VRInput.Button0, LeftControllerButton0);
         leftVRInputToTransform.Add(VRInput.Button1, LeftControllerButton1);
         leftVRInputToTransform.Add(VRInput.JoystickClick, LeftControllerJoystick);
@@ -156,8 +167,14 @@ public class VRController : MonoBehaviour
 
     public Transform VRInputToTransform(VRDevice vrDevice, VRInput vrInput)
     {
+        Debug.Log("GetsHere20 "+gameObject.name);
+        Debug.Log("GetsHere21"+rightVRInputToTransform);
+            
+        Debug.Log("GetsHere18 "+vrInput.ToString());
+        Debug.Log("GetsHere19"+rightVRInputToTransform[vrInput]);
+        
         Transform result;
-
+            
         if (vrDevice == VRDevice.LeftController)
             result = (Transform) leftVRInputToTransform[vrInput];
         else
@@ -170,6 +187,12 @@ public class VRController : MonoBehaviour
 
     public bool InputActive(VRDevice vrDevice, VRInput input)
     {
+        if (vrDevice == VRDevice.None || input == VRInput.None)
+            {
+                //Debug.LogError("Checking if no input device is active.");
+                return false;
+            }
+
         if (platform == Platform.OVR)
         {
             //Debug.Log("input = "+input);

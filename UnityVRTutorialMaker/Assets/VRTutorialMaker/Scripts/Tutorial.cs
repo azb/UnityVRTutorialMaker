@@ -40,9 +40,6 @@ public class Tutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Tutorial Start");
-
-
         tutorialActivator = GetComponentInParent<TutorialActivator>();
         
         tutorialLine = GetComponentInChildren<DrawLineBetweenObjects>();
@@ -150,6 +147,12 @@ public class Tutorial : MonoBehaviour
         {
             tutorialText.text = tutorialSteps[currentStep].text;
             tutorialSteps[currentStep].ActivateStep();
+
+            if (tutorialSteps[currentStep].audioClip != null)
+                {
+                Debug.Log("Playing audio clip: "+tutorialSteps[currentStep].audioClip.name);
+                audioSource.PlayOneShot(tutorialSteps[currentStep].audioClip);
+                }
         }
     }
 
@@ -166,14 +169,17 @@ public class Tutorial : MonoBehaviour
 
         ResetInputHighlightMeshRenderer();
 
-        Transform newTarget = tutorialScriptableObject.vrController.VRInputToTransform(vrDevice, vrInput);
+        if (vrDevice != VRController.VRDevice.None && vrInput != VRController.VRInput.None)
+            {
+            Transform newTarget = tutorialScriptableObject.vrController.VRInputToTransform(vrDevice, vrInput);
 
-        tutorialScriptableObject.FlashObject(newTarget);
+            tutorialScriptableObject.FlashObject(newTarget);
 
-        if (newTarget != null)
-            tutorialLine.object1 = newTarget;
-        else
-            Debug.LogError("newTarget is null");
+            if (newTarget != null)
+                tutorialLine.object1 = newTarget;
+            else
+                Debug.LogError("newTarget is null");
+            }
     }
 
     void ResetInputHighlightMeshRenderer()

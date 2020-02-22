@@ -11,7 +11,11 @@ public class TutorialStep : MonoBehaviour
         
     public Tutorial tutorial;
 
+    //Use this audio clip to have narration for your tutorial
+    public AudioClip audioClip;
+
     //The tutorial text for this tutorial step
+    [TextArea]
     public string text;
     
     //The controller on which the user must press a button to complete this tutorial step
@@ -26,6 +30,8 @@ public class TutorialStep : MonoBehaviour
     public UnityEvent executeOnEnable, executeOnDisable, executeOnInputComplete;
 
     public GameObject[] objectsToActivateOnEnable;
+        
+    bool userCompletedTutorialActionEventTriggered = false;
 
     //The executeOnCompletion event will be executed when the user presses the 
     //correct button to complete this tutorial step
@@ -84,9 +90,12 @@ public class TutorialStep : MonoBehaviour
     {
         bool userCompletedTutorialAction = false;
 
-        if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight))
+        if (vrDeviceToHighlight != VRController.VRDevice.None && vrInputToHighlight != VRController.VRInput.None)
+        if (tutorialScriptableObject.vrController.InputActive(vrDeviceToHighlight, vrInputToHighlight)
+            || userCompletedTutorialActionEventTriggered)
         {
             userCompletedTutorialAction = true;
+            userCompletedTutorialActionEventTriggered = false;
         }
         
         if (userCompletedTutorialAction)
@@ -97,6 +106,11 @@ public class TutorialStep : MonoBehaviour
             if (completions >= requiredCompletions)
                 OnInputComplete();
         }
+    }
+
+    public void CompleteTutorialStep()
+    {
+        userCompletedTutorialActionEventTriggered = true;
     }
 }
 }

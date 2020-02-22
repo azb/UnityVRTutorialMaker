@@ -16,6 +16,11 @@ public class RotateTowardsObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (targetTag == "")
+            {
+            targetTag = "MainCamera";
+            }
+
         target = GameObject.FindGameObjectWithTag(targetTag).transform; //TransformUtils.FindTransform(targetTag);
     }
 
