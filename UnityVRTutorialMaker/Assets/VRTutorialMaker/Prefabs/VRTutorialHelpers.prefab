@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newParent: {fileID: 0}
-  name: CenterEyeAnchor
+  parentGameObjectName: CenterEyeAnchor
   offset: {x: 0, y: 0, z: 0.4}
   waitTime: 0
 --- !u!114 &892971538
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newParent: {fileID: 0}
-  name: RightJoystickPivot
+  parentGameObjectName: RightJoystickPivot
   offset: {x: 0, y: 0, z: 0}
   waitTime: 0
 --- !u!1 &4207824125312087758
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newParent: {fileID: 0}
-  name: LeftJoystickPivot
-  offset: {x: 0, y: 0.003, z: 0}
+  parentGameObjectName: LeftJoystickPivot
+  offset: {x: 0, y: 0.03, z: 0}
   waitTime: 0
 --- !u!1001 &4207824123836353256
 PrefabInstance:
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3179598710926891949, guid: 11c95b5c8047275429d26709a78132d4,
         type: 3}
-      propertyPath: name
+      propertyPath: parentGameObjectName
       value: LeftJoystickPivot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -267,13 +267,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6817488916897501246, guid: e27c36a88fcb6c9459b1cb7d11105600,
         type: 3}
-      propertyPath: name
+      propertyPath: parentGameObjectName
       value: RightJoystickPivot
       objectReference: {fileID: 0}
     - target: {fileID: 6817488916897501246, guid: e27c36a88fcb6c9459b1cb7d11105600,
         type: 3}
       propertyPath: offset.y
-      value: 0.003
+      value: 0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27c36a88fcb6c9459b1cb7d11105600, type: 3}

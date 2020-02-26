@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ParentToObject : MonoBehaviour
 {
-    public Transform newParent;
-    public string name;
-    public Vector3 offset;
-    public float waitTime;
+    [SerializeField] private Transform newParent;
+    [SerializeField][FormerlySerializedAs("name")] private string parentGameObjectName = "";
+    [SerializeField] private Vector3 offset = Vector3.zero;
+    [SerializeField] private float waitTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +54,9 @@ public class ParentToObject : MonoBehaviour
             transform.localRotation = Quaternion.identity;
         }
         else
-        if (name != "")
+        if (parentGameObjectName != "")
         {
-            GameObject parentGO = GameObject.Find(name);
+            GameObject parentGO = GameObject.Find(parentGameObjectName);
             if (parentGO != null && parentGO.activeSelf && gameObject.activeSelf)
             {
                 transform.parent = parentGO.transform;
