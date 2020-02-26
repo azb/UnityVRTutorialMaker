@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class ParentToObject : MonoBehaviour
 {
-    [SerializeField] private Transform newParent;
+    [SerializeField] private Transform newParent = null;
     [SerializeField][FormerlySerializedAs("name")] private string parentGameObjectName = "";
     [SerializeField] private Vector3 offset = Vector3.zero;
     [SerializeField] private float waitTime = 0;

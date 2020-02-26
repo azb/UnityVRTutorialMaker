@@ -36,13 +36,13 @@ public class OVRButtonPositioner : MonoBehaviour
         
         if (OVRInput.GetDown(button, controller))
         {
-            Debug.Log("button pressed: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
+            //Debug.Log("button pressed: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
             
             input.x = 1f;
         }
         if (OVRInput.GetUp(button, controller))
         {
-            Debug.Log("button released: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
+            //Debug.Log("button released: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
             input.x = 0f;
         }
                 
