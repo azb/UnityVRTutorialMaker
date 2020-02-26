@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newParent: {fileID: 0}
-  name: RightHandAnchor
+  parentGameObjectName: RightHandAnchor
   offset: {x: 0, y: 0, z: 0}
   waitTime: 0
 --- !u!114 &1123958762
@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newParent: {fileID: 0}
-  name: LeftHandAnchor
+  parentGameObjectName: LeftHandAnchor
   offset: {x: 0, y: 0, z: 0}
   waitTime: 0
 --- !u!1 &9112607835243702791
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9112607835243702790}
   m_Layer: 0
-  m_Name: VRPlaySpace
+  m_Name: VRControllerPrefabs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
