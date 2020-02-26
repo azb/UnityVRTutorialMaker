@@ -32,7 +32,7 @@ RectTransform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 5915920401838867920}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -251,16 +251,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Great! Now press this button
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 1
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -317,17 +318,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the joystick forwards or backwards to point and teleport to another
     location
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 8
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -384,16 +386,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the joystick left or right to move left or right
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 7
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -407,101 +410,6 @@ MonoBehaviour:
   requiredCompletions: 5
   tutorialScriptableObject: {fileID: 11400000, guid: d1f292cd02a4b2141b90825be8c115d3,
     type: 2}
---- !u!1 &5915920400425580705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5915920400425580706}
-  - component: {fileID: 5915920400425580708}
-  - component: {fileID: 5915920400425580707}
-  m_Layer: 0
-  m_Name: Tutorial Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5915920400425580706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5915920400425580705}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.251, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_Children: []
-  m_Father: {fileID: 5915920401838867920}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &5915920400425580708
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5915920400425580705}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!102 &5915920400425580707
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5915920400425580705}
-  m_Text: 'Press this
-
-    button to do
-
-    cool stuff!'
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 1
-  m_TabSize: 4
-  m_FontSize: 80
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294967295
 --- !u!1 &5915920400541357591
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,16 +453,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the grip
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 4
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -611,16 +520,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the joystick left or right to turn left or right
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 7
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -677,16 +587,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press this button to exit the game
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 5
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -743,16 +654,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Click the joystick
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 2
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -809,16 +721,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the Right Controller Trigger
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 3
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -875,16 +788,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the grip
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 4
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1018,16 +932,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the joystick forwards or backwards to move forwards or backwards
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 8
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1236,16 +1151,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Click this joystick
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 2
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1302,16 +1218,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press this button to open the pause menu
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 5
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1379,16 +1296,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the A button 5 times
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 0
   vrInputToHighlight: 0
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1446,7 +1364,7 @@ Transform:
   - {fileID: 5915920401566731990}
   - {fileID: 5915920400663726976}
   m_Father: {fileID: 5915920401838867920}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5915920401783709412
 GameObject:
@@ -1491,16 +1409,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press this button
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 1
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1557,16 +1476,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press the Left Controller Trigger
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 3
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -1612,7 +1532,6 @@ Transform:
   m_Children:
   - {fileID: 5915920401459006540}
   - {fileID: 5915920401321596758}
-  - {fileID: 5915920400425580706}
   - {fileID: 5915920400051562617}
   - {fileID: 5915920401687144235}
   m_Father: {fileID: 5915920401900257949}
@@ -1670,6 +1589,7 @@ MonoBehaviour:
   tutorialStepsParent: {fileID: 5915920401687144235}
   tutorialScriptableObject: {fileID: 11400000, guid: d1f292cd02a4b2141b90825be8c115d3,
     type: 2}
+  subObjectiveCompleteSoundEffect: {fileID: 0}
 --- !u!1 &5915920401843464996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,16 +1633,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c61d008e6dfd40870d78eb07e626c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAt: {fileID: 0}
   tutorial: {fileID: 0}
+  audioClip: {fileID: 0}
   text: Press this button
+  sprite: []
+  animationClip: {fileID: 0}
   vrDeviceToHighlight: 1
   vrInputToHighlight: 0
+  action: 0
+  completeStepOnInput: 1
   executeOnEnable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  executeOnDisable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,

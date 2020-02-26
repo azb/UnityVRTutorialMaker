@@ -208,6 +208,9 @@ public class TutorialScriptableObject : ScriptableObject
 
     public void FlashObject(Transform objectToFlash)
     {
+            Debug.Log("FlashObject calleds");
+
+
         inputMeshRenderer = GetInputMeshRenderer(objectToFlash);
         originalColor = inputMeshRenderer.material.color;
     }

@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &239190894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 239190895}
+  - component: {fileID: 239190896}
+  m_Layer: 0
+  m_Name: UITarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &239190895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239190894}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.00080070645, y: -0.58394706, z: -4.2220445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4207824125312087757}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &239190896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239190894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a93382f90f47f4bbd897f89d286f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newParent: {fileID: 0}
+  name: CenterEyeAnchor
+  offset: {x: 0, y: 0, z: 0.4}
+  waitTime: 0
+--- !u!114 &892971538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520720618860946057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a93382f90f47f4bbd897f89d286f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newParent: {fileID: 0}
+  name: RightJoystickPivot
+  offset: {x: 0, y: 0, z: 0}
+  waitTime: 0
+--- !u!1 &4207824125312087758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4207824125312087757}
+  m_Layer: 0
+  m_Name: VRTutorialHelpers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4207824125312087757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4207824125312087758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.00080070645, y: 0.0009469949, z: 0.00704417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 849322948965156653}
+  - {fileID: 8351224334990479734}
+  - {fileID: 239190895}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741723488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859747762340150284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a93382f90f47f4bbd897f89d286f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newParent: {fileID: 0}
+  name: LeftJoystickPivot
+  offset: {x: 0, y: 0.003, z: 0}
+  waitTime: 0
+--- !u!1001 &4207824123836353256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4207824125312087757}
+    m_Modifications:
+    - target: {fileID: 287949281038607416, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_Name
+      value: Left Joystick Tutorial Arrows
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.017801365
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0047673793
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.010454234
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.099884205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99499905
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -11.465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179598710926891949, guid: 11c95b5c8047275429d26709a78132d4,
+        type: 3}
+      propertyPath: name
+      value: LeftJoystickPivot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11c95b5c8047275429d26709a78132d4, type: 3}
+--- !u!4 &849322948965156653 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3579331494687149509, guid: 11c95b5c8047275429d26709a78132d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4207824123836353256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6859747762340150284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7302456511933282020, guid: 11c95b5c8047275429d26709a78132d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 4207824123836353256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4207824124287043567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4207824125312087757}
+    m_Modifications:
+    - target: {fileID: 772698293085627750, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_Name
+      value: Right Joystick Tutorial Arrows
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.017801365
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0047673793
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.010454233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.09988103
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9949994
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817488916897501246, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: name
+      value: RightJoystickPivot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817488916897501246, guid: e27c36a88fcb6c9459b1cb7d11105600,
+        type: 3}
+      propertyPath: offset.y
+      value: 0.003
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e27c36a88fcb6c9459b1cb7d11105600, type: 3}
+--- !u!1 &3520720618860946057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 772698293085627750, guid: e27c36a88fcb6c9459b1cb7d11105600,
+    type: 3}
+  m_PrefabInstance: {fileID: 4207824124287043567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8351224334990479734 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5296431031128577689, guid: e27c36a88fcb6c9459b1cb7d11105600,
+    type: 3}
+  m_PrefabInstance: {fileID: 4207824124287043567}
+  m_PrefabAsset: {fileID: 0}

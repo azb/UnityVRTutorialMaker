@@ -28,15 +28,23 @@ public class OVRButtonPositioner : MonoBehaviour
         startLocalPosition = transform.localPosition;
     }
 
+    Vector2 input = Vector2.zero;
+
     // Update is called once per frame
     void Update()
     {
-        Vector2 input = Vector2.zero;
         
-        if (OVRInput.Get(button, controller))
+        if (OVRInput.GetDown(button, controller))
+        {
+            Debug.Log("button pressed: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
+            
             input.x = 1f;
-        else
+        }
+        if (OVRInput.GetUp(button, controller))
+        {
+            Debug.Log("button released: "+button+" , "+" controller: "+controller+" gameobject: "+gameObject.name);
             input.x = 0f;
+        }
                 
         float xoff = 0, yoff = 0, zoff = 0;
 
